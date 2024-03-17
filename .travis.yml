@@ -4,7 +4,7 @@ services:
 
 before_install:
   - docker build -f ./client/Dockerfile.dev -t 315426346/client:latest ./client
-  - docker run -e CI=true 15426346/client npm run test
+  - docker run -e CI=true 315426346/client npm run test
 
 script:
   # 1) build add images
