@@ -16,6 +16,7 @@ before_install:
     rm -rf $HOME/google-cloud-sdk;
     curl https://sdk.cloud.google.com | bash > /dev/null;
   fi
+
   
   # download google cloud sdk
   - curl https://sdk.cloud.google.com | bash > /dev/null;
@@ -47,6 +48,7 @@ before_install:
 script:
   # test the dev version for client
   - docker run -e CI=true 315426346/client-test npm run test
+  
   
 
 deploy:
