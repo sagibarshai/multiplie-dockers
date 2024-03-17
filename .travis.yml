@@ -3,8 +3,7 @@ services:
   - docker
 
 python:
-  - "2.7"
-  - "3.5"
+  - "3.8"
 virtualenv:
   system_site_packages: true
 
