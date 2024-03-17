@@ -2,11 +2,6 @@ sudo: required # because docker in use
 services:
   - docker
 
-python:
-  - "3.8"
-virtualenv:
-  system_site_packages: true
-
 env:
   global:
     - SHA=$(git rev-parse-HEAD) # get the current git commit id (version) (used inside the deploy.sh)
@@ -16,12 +11,13 @@ before_install:
   # load the encrypted file (insert by travis cli) into this process
   - openssl aes-256-cbc -K $encrypted_9f3b5599b056_key -iv $encrypted_9f3b5599b056_iv -in service-account.json.enc -out service-account.json -d
   
-
+  
   # download google cloud sdk
   - curl https://sdk.cloud.google.com | bash > /dev/null;
   
   # add the gcloud env keyword to the process
   - source $HOME/google-cloud-sdk/path.bash.inc
+  - source $HOME//google-cloud-sdk/completion.bash.inc
  
   # add kubectl cli for this process
   - gcloud component update kubectl
