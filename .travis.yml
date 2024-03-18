@@ -1,4 +1,5 @@
 sudo: required # because docker in use
+dist: focal  # Specify the Ubuntu distribution
 services:
   - docker
 
