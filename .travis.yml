@@ -6,11 +6,14 @@ env:
   global:
     - SHA=$(git rev-parse-HEAD) # get the current git commit id (version) (used inside the deploy.sh)
     - CLOUDSDK_CORE_DISABLE_PROMPTS=1 # config google cloud cli to not ask for user input promotes
+    - CLOUDSDK_PYTHON=/opt/homebrew/bin/python3.80 # Set Python 3.10 interpreter path here
+
 
 before_install:
   # load the encrypted file (insert by travis cli) into this process
   - openssl aes-256-cbc -K $encrypted_9f3b5599b056_key -iv $encrypted_9f3b5599b056_iv -in service-account.json.enc -out service-account.json -d
   
+
   # download google cloud sdk
   - curl https://sdk.cloud.google.com | bash > /dev/null;
   
