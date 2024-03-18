@@ -21,6 +21,6 @@ kubectl apply -f ./k8s/server
 kubectl apply -f ./k8s/worker
 
 
-kubectl set image deployemnt/server-deployment server=315426346/server:$SHA
-kubectl set image deployemnt/client-deployment client=315426346/client:$SHA
-kubectl set image deployemnt/worker-deployment worker=315426346/worker:$SHA
+kubectl set image deployments/server-deployment server-container=315426346/server:$SHA
+kubectl set image deployments/client-deployment client-container=315426346/client:$SHA
+kubectl set image deployments/worker-deployment worker-container=315426346/worker:$SHA
