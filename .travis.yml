@@ -6,7 +6,7 @@ env:
   global:
     - SHA=$(git rev-parse-HEAD) # get the current git commit id (version) (used inside the deploy.sh)
     - CLOUDSDK_CORE_DISABLE_PROMPTS=1 # config google cloud cli to not ask for user input promotes
-    - CLOUDSDK_PYTHON=/opt/homebrew/bin/python3.80 # Set Python 3.10 interpreter path here
+    - CLOUDSDK_PYTHON=/opt/homebrew/bin/python3.8 # Set Python 3.10 interpreter path here
 
 
 before_install:
