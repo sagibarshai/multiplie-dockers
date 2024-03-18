@@ -7,7 +7,14 @@ import Fib from "./Fib";
 
 function App() {
   return (
-   <div> hello ! </div>
+    <Router>
+      <div className="App">
+        <div>
+          <Route exact path="/" component={Fib} />
+          <Route path="/otherpage" component={OtherPage} />
+        </div>
+      </div>
+    </Router>
   );
 }
 
