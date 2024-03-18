@@ -21,7 +21,7 @@ before_install:
   - source $HOME/google-cloud-sdk/path.bash.inc
  
   # add kubectl cli for this process
-  - gcloud component update kubectl
+  - gcloud components update kubectl
   
   # authenticate to gcloud (get the file key from IAM console) via the encrypted file (service-account.json)
   - gcloud auth activate-service-account --key-file service-account.json
