@@ -58,6 +58,7 @@ app.get('/values/current', async (req, res) => {
 
 app.post('/values', async (req, res) => {
   const index = req.body.index;
+  if(typeof index !== number) return res.status(400).send('index not a number')
 
   if (parseInt(index) > 40) {
     return res.status(422).send('Index too high');
